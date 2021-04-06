@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example", "Example\Example.vcxproj", "{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DebugLogging|x64 = DebugLogging|x64
+		DebugLogging|x86 = DebugLogging|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.Debug|x64.ActiveCfg = Debug|x64
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.Debug|x64.Build.0 = Debug|x64
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.Debug|x86.ActiveCfg = Debug|Win32
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.Debug|x86.Build.0 = Debug|Win32
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.DebugLogging|x64.ActiveCfg = DebugLogging|x64
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.DebugLogging|x64.Build.0 = DebugLogging|x64
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.DebugLogging|x86.ActiveCfg = DebugLogging|Win32
+		{E3EFBB88-C5E2-4E75-91F6-162AC1C017D3}.DebugLogging|x86.Build.0 = DebugLogging|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAE18550-0DA3-4A64-A0DA-D2A70D953DB4}
+	EndGlobalSection
+EndGlobal
