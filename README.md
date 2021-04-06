@@ -4,7 +4,7 @@ This repository contains example code and documentation for A-Trust's KassenSich
 ## Description
 Depending on your chosen middleware solution the following options apply:
 
- - Offline
+ - Offline (see https://github.com/A-Trust/KassenSichV/blob/main/Einheit/Docs/ChangeLog.md)
    - Einheit 
    - Einheit + COM
    - Einheit + EXE
