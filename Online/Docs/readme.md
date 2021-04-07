@@ -9,6 +9,7 @@
 | 16/03/2020        | 0.9.7         | Daniel Kovacic | Library initialization, A-Trust API, Cfg API. |
 | 30/03/2020        | 0.9.7_1       | Daniel Kovacic | Add COM function signatures. Add Appendix for COM function signatures. |
 | 02/04/2020        | 0.9.7_2       | Daniel Kovacic | Add Appendix for C function signatures. |
+| 07/04/2020        | 0.9.7_3       | JC             | Provisioning description  |
 
 # Introduction
 
@@ -26,12 +27,10 @@ The function `at_unload` must be called before closing the application. After `a
 ## Provisioning
 The following example shows how to provision a TSE using SE API functions.
 
-First of all we shall check whether the TSE's `lifeCycleState` is
-`NotInitialized` (=1) by using the function [at_getLifecycleState](#at_getLifecycleState). To start the
-provisioning we call the function [at_setPins](#at_setPins) to create the initial
-PIN and PUK values. Next we log in as the admin user using the function
-[authenticateUser](#authenticateUser), followed by the function [initializeDescriptionSet](#initializeDescriptionSet) to put the TSE into the initialized state. We then call the function [at_registerClientId](#at_registerClientId). Finally, we log out of the
-administrator role using the function  [logOut](#logOut).
+First of all we shall check whether the TSE's `lifeCycleState` is `NotInitialized` (=1) by using the function [at_getLifecycleState](#at_getLifecycleState).
+Contrary to earlier versions, PIN and PUK are set during the installation process.
+Next we log in as the admin user using the function [authenticateUser](#authenticateUser), followed by the function [initializeDescriptionSet](#initializeDescriptionSet) to put the TSE into the initialized state.
+We then call the function [at_registerClientId](#at_registerClientId). Finally, we log out of the administrator role using the function  [logOut](#logOut).
 
 Note that we did not explicitly require any calls to initialize the
 connection to the security module, nor to perform a time update. These calls
