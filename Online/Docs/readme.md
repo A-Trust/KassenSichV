@@ -2,14 +2,15 @@
 
 | Date              | Revision      | Author | Changes  |
 | ----------------- |:-------------:|:--------:|------------- |
-| 09/09/2019        | 0.9.0         | Daniel Kovacic | API description. |
-| 25/10/2019        | 0.9.2         | Daniel Kovacic | API description. |
-| 29/10/2019        | 0.9.3         | Daniel Kovacic | API description. |
+| 09/09/2019        | 0.9.0         | DK | API description. |
+| 25/10/2019        | 0.9.2         | DK | API description. |
+| 29/10/2019        | 0.9.3         | DK | API description. |
 | 03/01/2020        | 0.9.4         | RS             | Cleanup, withTse |
-| 16/03/2020        | 0.9.7         | Daniel Kovacic | Library initialization, A-Trust API, Cfg API. |
-| 30/03/2020        | 0.9.7_1       | Daniel Kovacic | Add COM function signatures. Add Appendix for COM function signatures. |
-| 02/04/2020        | 0.9.7_2       | Daniel Kovacic | Add Appendix for C function signatures. |
-| 07/04/2020        | 0.9.7_3       | JC             | Provisioning description  |
+| 16/03/2020        | 0.9.7         | DK | Library initialization, A-Trust API, Cfg API. |
+| 30/03/2020        | 0.9.7_1       | DK | Add COM function signatures. Add Appendix for COM function signatures. |
+| 02/04/2020        | 0.9.7_2       | DK | Add Appendix for C function signatures. |
+| 07/04/2020        | 0.9.7_3       | JC             | Provisioning description.  |
+| 23/04/2020        | 1.0.0         | DK             | Fix cfg-Function descriptions.  |
 
 # Introduction
 
@@ -20,7 +21,7 @@ A-Trust provides a shared library for using **a.sign TSE Online**, which provide
 The library must be placed in the same directory as the executable. The provided configuration file must be placed in the working directory of the executable.
 
 ## Library Initialization
-Since version **0.9.7** the library must be initialized with a call to `at_load`. The function `at_load` must be called exactly once at startup and before any other library call.
+Since version **1.0.0** the library must be initialized with a call to `at_load`. The function `at_load` must be called exactly once at startup and before any other library call.
 
 The function `at_unload` must be called before closing the application. After `at_unload` has been called, no other function call to the library is allowed.
 
@@ -2489,7 +2490,7 @@ HRESULT CfgSetLoggingEnabled([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `false`. |
 
 ### Return Codes
 
@@ -2516,7 +2517,7 @@ HRESULT CfgSetLoggingStderr([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `false`. |
 
 ### Return Codes
 
@@ -2543,7 +2544,7 @@ HRESULT CfgSetLoggingFile([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `false` |
 
 ### Return Codes
 
@@ -2571,7 +2572,7 @@ HRESULT CfgSetLogDir([in] BSTR path,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| path | in | REQUIRED | Target Directory for logfiles. |
+| path | in | REQUIRED | Target Directory for logfiles. Default: `.`. |
 | pathLength | in | REQUIRED | The length of the array that represents the path. |
 
 
@@ -2588,7 +2589,7 @@ Set verbosity level of the logger.
 
 **C**
 ```C
-int32_t cfgSetLogLevel(bool enabled)
+int32_t cfgSetLogLevel(const int8_t *logLevel, uint32_t logLevelLength)
 ```
 **COM**
 ```C
@@ -2600,7 +2601,8 @@ HRESULT CfgSetLogLevel([in] BSTR logLevel,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| logLevel | in | REQUIRED | A string representing the available verbosity levels of the logger. Allowed values are: `error`, `warn`, `info`, `debug` and `trace`. Default: `trace`. |
+| logLevelLength | in | REQUIRED | The length of the string that represents the logLevel. |
 
 ### Return Codes
 
@@ -2630,7 +2632,7 @@ HRESULT CfgSetLogAppend([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `true`. |
 
 ### Return Codes
 
@@ -2657,7 +2659,7 @@ HRESULT CfgSetLogColors([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `false`. |
 
 ### Return Codes
 
@@ -2684,7 +2686,7 @@ HRESULT CfgSetLogDetails([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `true`. |
 
 ### Return Codes
 
@@ -2711,7 +2713,7 @@ HRESULT CfgSetLogStderrColors([in] BOOL enabled,
 
 | Name          | In/Out      | Required? | Description  |
 | ------------- |:-------------:|:----:|------------- |
-| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. |
+| enabled | in | REQUIRED | Set the value of this property to `true` to enable the option or `false` to disable it. Default: `false`. |
 
 ### Return Codes
 
