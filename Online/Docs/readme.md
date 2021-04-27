@@ -1428,7 +1428,7 @@ The initialization data in form of the description of the SE API is passed by th
 
 The description of the SE API MUST NOT have been set by the manufacturer.
 
-**This call is currently not implemented, because TSE initialization currently is done online in the partner account.**
+
 
 ## initializeDescriptionSet
 
@@ -1436,7 +1436,7 @@ The function initializeDescriptionSet starts the initialization of the SE API by
 
 The description of the SE API SHALL have been set by the manufacturer.
 
-**This call is currently not implemented, because TSE initialization currently is done online in the partner account.**
+
 
 **C**
 ```C
@@ -2195,7 +2195,8 @@ Gets the serial number (SHA256 hash of public key) of the transaction log signin
 
 **C**
 ```C
-int32_t at_getLifecycleState(LifecycleState *state)
+int32_t at_getSerialNumber(uint8_t **serial,
+                           uint32_t *serialLength);
 ```
 **COM**
 ```C
