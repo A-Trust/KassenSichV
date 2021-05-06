@@ -5,12 +5,13 @@
 | 09/09/2019        | 0.9.0         | DK | API description. |
 | 25/10/2019        | 0.9.2         | DK | API description. |
 | 29/10/2019        | 0.9.3         | DK | API description. |
-| 03/01/2020        | 0.9.4         | RS             | Cleanup, withTse |
+| 03/01/2020        | 0.9.4         | RS | Cleanup, withTse |
 | 16/03/2020        | 0.9.7         | DK | Library initialization, A-Trust API, Cfg API. |
 | 30/03/2020        | 0.9.7_1       | DK | Add COM function signatures. Add Appendix for COM function signatures. |
 | 02/04/2020        | 0.9.7_2       | DK | Add Appendix for C function signatures. |
-| 07/04/2020        | 0.9.7_3       | JC             | Provisioning description.  |
-| 23/04/2020        | 1.0.0         | DK             | Fix cfg-Function descriptions.  |
+| 07/04/2020        | 0.9.7_3       | JC | Provisioning description.  |
+| 23/04/2020        | 1.0.0         | DK | Fix cfg-Function descriptions.  |
+| 23/04/2020        | 1.0.0_1       | JC | Add error codes |
 
 # Introduction
 
@@ -2780,6 +2781,13 @@ HRESULT CfgSetHttpProxy([in] BSTR proxyUrl,
 | ERROR_NO_KEY  | -3015 |
 | ERROR_SE_API_DEACTIVATED  | -3016 |
 | ERROR_SE_API_NOT_DEACTIVATED  | -3017 |
+| ERROR_AT_LOAD_NOT_CALLED | -3018 |
+| ERROR_SE_IPC_PROTOCOL_ERROR | -3019 |
+| ERROR_AT_SET_PINS_FAILED | -3020|
+| ERROR_SE_NOT_PROVISIONED_ERROR | -3021 |
+| ERROR_SE_INSUFFICIENT_USER_ENTROPY_ERROR | -3021 |
+| ERROR_SE_ALREADY_PROVISIONED | -3022 |
+| ERROR_SE_IN_SECURE_STATE | -3023 |
 | ERROR_UNKNOWN  | -3100 |
 | ERROR_AUTHENTICATION_FAILED | -4000 |
 | ERROR_UNBLOCK_FAILED | -4001 |
