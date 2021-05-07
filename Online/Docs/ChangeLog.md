@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+Note that from version 1.0.1.0 the installer version takes the form x.y.z.w where x.y.0 is the SMAERS version number, and z.w.0 is the asigntse.dll version number.
+
+## [1.2.1.2] - 2021-05-06
+- new function at_getMaxLicencedClients
+- SMAERS fixes for audit logging and minimum PIN/PUK length
+- update service fix to handle LAN TSE
+- installer/setup fixes
+
 ## [1.0.1.0] - 2021-04-02
 Initial release version of asigntse.dll.
 - various bug fixes
