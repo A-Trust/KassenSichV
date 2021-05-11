@@ -229,7 +229,7 @@ if (authenticateUser(
 
 ## Cryptovision Functions
 
-Functions specific to Cryptovision implementation begin with the prefix `_cv`.  These functions will only work in conjunction with the Cryptovision library.  
+Functions specific to Cryptovision implementation begin with the prefix `cv_`.  These functions will only work in conjunction with the Cryptovision library.  
 They are exposed by the A-Trust library for convenience and in most cases they correspond to an identical function in the Cryptovision library.
 
 ### Return codes
