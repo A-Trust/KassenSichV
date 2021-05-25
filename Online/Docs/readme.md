@@ -2852,6 +2852,7 @@ HRESULT CfgSetHttpProxy([in] BSTR proxyUrl,
 | ERROR_SE_ALREADY_INITIALIZED                    | -5058 |
 | ERROR_GET_SIGNATURE_ALGORITHM_FAILED            | -5059 |
 | ERROR_UNSUPPORTED_PREMIUM_FEATURE               | -6000 |
+| ERROR_NOT_IMPLEMENTED				  | -6001 |
 | EXECUTION_OK                                    | 0     |
 
 ## Configuration File
